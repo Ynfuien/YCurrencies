@@ -1,0 +1,68 @@
+##########################
+#                        #
+#  Lang file by Ynfuien  #
+#                        #
+##########################
+
+
+#### Quick info:
+# 1. If you don't want a message to be sent, just set it empty - ''
+
+# 2. You can use MiniMessage formatting for custom colors and formats!
+# If you don't know how, then here is documentation:
+# https://docs.advntr.dev/minimessage/format.html
+
+# 3. PlaceholderAPI is supported
+
+# 4. Plugin placeholders are within curly brackets - {placeholder}
+# If you add an exclamation mark (!) before placeholder name - {!placeholder},
+# then it won't be formatted in any way. It's useful for user input placeholders,
+# so they won't be formatted by what player enters.
+
+prefix: '<dark_aqua>[<bold><aqua>Y<gold>Currency</bold><dark_aqua>]<reset>'
+
+help-no-commands: '{prefix} <red>You don''t have permission for any command!'
+help-top: '{prefix} <dark_aqua>Available commands:'
+help-command-template: '<click:suggest_command:"/{command}"><hover:show_text:"Click to enter the command"><blue>/{command}</click> <white>- <aqua>{description}'
+
+
+commands-usage-player: 'player'
+commands-usage-amount: 'amount'
+commands-usage-balance: 'balance'
+
+
+commands-only-player: '{prefix} <red>This command can''t be used from the console!'
+
+
+command-admin-add-description: 'Adds {alias} to player''s balance'
+command-admin-addall-description: 'Gives {alias} to all online players'
+command-admin-balance-description: 'Shows player''s balance'
+command-admin-set-description: 'Sets player''s balance'
+command-admin-remove-description: 'Takes {alias} from a player'
+command-admin-debug-description: 'Shows debug info'
+
+
+command-balance: '{prefix} <aqua>Your balance is <{color}><hover:show_text:"<aqua>Exactly: <{color}>{balance} {alias}">{balance-formatted} {alias}</hover><aqua>!'
+command-give-usage: '{prefix} <gray>Use /{command} give <player> <amount>, to give {alias} to another player!'
+command-give-success: '{prefix} <aqua>Gave <{color}>{amount} {alias} <aqua>to <dark_aqua>{player-username}<aqua>!'
+command-give-receive: '{prefix} <dark_aqua>{player-username}<aqua> just gave you <{color}>{amount} {alias}<aqua>!'
+command-give-fail-yourself: '{prefix} <red>You can''t give {alias} to yourself!'
+command-give-fail-too-much: '{prefix} <red>You don''t have that much {alias}!'
+command-give-fail-too-little: '{prefix} <red>You can''t give less than 1 {alias}!'
+command-fail-no-amount: '{prefix} <red>You have to provide {alias} amount!'
+command-fail-no-player: '{prefix} <red>You have to provide a player!'
+command-fail-incorrect-username: '{prefix} <red>Provided username is incorrect!'
+command-fail-incorrect-amount: '{prefix} <red>Provided {alias} amount is incorrect!'
+command-fail-amount-too-large: '{prefix} <red>Provided {alias} amount is too large!'
+command-fail-player-doesnt-exist: '{prefix} <red>Provided player was never on the server!'
+command-fail-player-isnt-online: '{prefix} <red>Provided player isn''t online!'
+command-admin-balance: '{prefix} <aqua><dark_aqua>{player-username}''s <aqua>balance is <{color}>{balance} {alias}<aqua>!'
+command-admin-addall: '{prefix} <aqua>Successfully <green>added <{color}>{amount} {alias} <aqua>to all online players!'
+command-admin-add: '{prefix} <aqua>Successfully <green>added <{color}>{amount} {alias} <aqua>to <dark_aqua>{player-username}''s <aqua>balance!'
+command-admin-set: '{prefix} <aqua>Successfully <green>set <dark_aqua>{player-username}''s <aqua>balance to <{color}>{balance} {alias}<aqua>!'
+command-admin-remove: '{prefix} <aqua>Successfully <red>took <{color}>{amount} {alias}<aqua> from <dark_aqua>{player-username}''s <aqua>balance!'
+
+
+module-break-block-get: '{prefix} <aqua>You just <green>got <{color}>{amount} {alias} <aqua>from mined block!'
+module-kill-mob-get: '{prefix} <aqua>You just <green>got <{color}>{amount} {alias} <aqua>from killed mob!'
+module-interval-get: '{prefix} <aqua>You just got <{color}>{amount} {alias} <aqua>from periodic giveaway for activity!'

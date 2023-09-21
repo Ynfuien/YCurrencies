@@ -1,0 +1,97 @@
+# General info about currency.
+# You can leave everything empty except a name.
+general:
+  name: 'supercoin'
+  displayname: 'SuperCoin'
+  alias: 'SC'
+  color: '#9116f0'
+
+database:
+  # Database table name
+  table: 'supercoins'
+  # Int
+  update-interval: 5
+
+command:
+  name: 'supercoins'
+  aliases: ['sc']
+
+modules:
+  # Giving custom currency money to all players every x seconds
+  interval:
+    enabled: true
+    # Time in seconds between giving money away
+    time: 600
+    # Minimum amount to be given
+    min-amount: 1
+    # Maximum amount to be given
+    max-amount: 10
+    # List of ignored gamemodes, that won't get money
+    ignored-gamemodes: []
+    # Whether higher amounts of money should have less chance to be given.
+    # If false, money will be given on random between min and max values.
+    less-chance-for-more: true
+    # Chance for higher money amount.
+    # Used if less-chance-for-more is enabled.
+    # 45 means 45% chance and in this example it works that way:
+    # 100% - 1$
+    # 45% - 2$
+    # 20.25% - 3$
+    # 9,11% - 4$
+    # 4,10% - 5$
+    # etc. etc.
+    chance-for-more: 45
+
+  # Giving money for breaking blocks
+  break-block:
+    enabled: true
+    min-amount: 1
+    max-amount: 10
+    ignored-gamemodes: ['CREATIVE']
+    less-chance-for-more: true
+    chance-for-more: 50
+
+    # Chances for each set of blocks
+    block-chances:
+      # 0,045 means 0.045% chance for getting money when breaking block from that set
+      # Comma (,) is necessary for floating point values, dot (.) can't be used.
+      # If block is in two or more sets, then it will be used from the first one.
+      '0,05':
+        # Blocks materials set
+        - 'STONE'
+        - 'DIRT'
+      '0,1':
+        - 'IRON_ORE'
+        - 'GOLD_ORE'
+        - 'DIAMOND_ORE'
+        - 'EMERALD_ORE'
+
+  # Giving money for killing mobs
+  kill-mob:
+    enabled: true
+    min-amount: 1
+    max-amount: 10
+    ignored-gamemodes: ['CREATIVE']
+    less-chance-for-more: true
+    chance-for-more: 50
+
+    # Chances for each set of mobs
+    mob-chances:
+      # 0,13 means 0.13% chance for getting money while killing mob from that set
+      # Comma (,) is necessary for floating point values, dot (.) can't be used.
+      # If mob is in two or more sets, then it will be used from the first one.
+      # You can see all mob types at https://hub.spigotmc.org/javadocs/bukkit/org/bukkit/entity/EntityType.html
+      # You can also use mob categories instead of writing each mob separately:
+      # MONSTER, ANIMALS, WATER_MOB, AMBIENT, BOSS, GOLEM
+      '0,13':
+        # 'MONSTER' means all hostile mobs
+        - 'MONSTER'
+        #- 'ZOMBIE'
+        #- 'SKELETON'
+        #- 'CREEPER'
+      '0,15':
+        # 'ANIMALS' means all animals
+        - 'ANIMALS'
+        #- 'COW'
+        #- 'SHEEP'
+        #- 'PIG'

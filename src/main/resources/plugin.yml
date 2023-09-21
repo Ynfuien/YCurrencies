@@ -1,0 +1,14 @@
+name: '${project.name}'
+version: '${project.version}'
+main: pl.ynfuien.ycurrencies.YCurrencies
+api-version: 1.19
+softdepend: [ PlaceholderAPI ]
+author: Ynfuien
+description: '${project.description}'
+website: '${project.url}'
+
+commands:
+  ycurrencies:
+    aliases: [yc]
+    permission: ycurrencies.cmd.main
+    description: 'General command of the plugin'

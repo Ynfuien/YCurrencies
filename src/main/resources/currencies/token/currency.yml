@@ -1,0 +1,17 @@
+# General info about currency.
+# You can leave everything empty except a name.
+general:
+  name: 'token'
+  displayname: 'Token'
+  alias: 'TK'
+  color: '#f7c214'
+
+database:
+  # Database table name
+  table: 'tokens'
+
+command:
+  name: 'tokens'
+  aliases: ['tk']
+
+# Modules are optional. If you want, you can copy and paste them here from another file.

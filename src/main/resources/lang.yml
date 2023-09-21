@@ -1,0 +1,35 @@
+##########################
+#                        #
+#  Lang file by Ynfuien  #
+#                        #
+##########################
+
+
+#### Quick info:
+# 1. If you don't want a message to be sent, just set it empty - ''
+
+# 2. You can use MiniMessage formatting for custom colors and formats!
+# If you don't know how, then here is documentation:
+# https://docs.advntr.dev/minimessage/format.html
+
+# 3. PlaceholderAPI is supported
+
+# 4. Plugin placeholders are within curly brackets - {placeholder}
+# If you add an exclamation mark (!) before placeholder name - {!placeholder},
+# then it won't be formatted in any way. It's useful for user input placeholders,
+# so they won't be formatted by what player enters.
+
+
+# Prefix that will be used for {prefix} placeholder
+prefix: '<dark_aqua>[<bold><aqua>Y<gold>Currencies</bold><dark_aqua>]<reset>'
+
+plugin-is-reloading: '{prefix} <red>Plugin is reloading, wait a second..'
+
+commands-no-permission: '{prefix} <red>You don''t have permission for this command!'
+
+command-usage: '{prefix} <gray>Command usage: /{command} <reload | version>'
+
+command-reload-fail: '{prefix} <red>An error occurred while reloading plugin. Take a look in the console for more information!'
+command-reload-success: '{prefix} <aqua>Plugin was <green>successfully <aqua>reloaded!'
+
+command-version: '{prefix} <dark_aqua>Plugin info:<newline>{prefix} <aqua>Name: <white>{name}<newline>{prefix} <aqua>Version: <green>{version}<newline>{prefix} <aqua>Author: <click:open_url:"{website}"><hover:show_text:"{website}"><white>{author}</click>'
