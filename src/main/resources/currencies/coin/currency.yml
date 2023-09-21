@@ -9,8 +9,6 @@ general:
 database:
   # Database table name
   table: 'supercoins'
-  # Int
-  update-interval: 5
 
 command:
   name: 'supercoins'
