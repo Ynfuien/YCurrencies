@@ -13,13 +13,16 @@ import java.util.UUID;
 
 public class CurrencyDatabase {
     private static HikariDataSource dbSource;
+    private static String dbName;
 
     public static boolean setup(ConfigurationSection config) {
         close();
 
+        dbName = config.getString("name");
+
         HikariConfig dbConfig = new HikariConfig();
         dbConfig.setDriverClassName("com.mysql.cj.jdbc.Driver");
-        dbConfig.setJdbcUrl(String.format("jdbc:mysql://%s:%s/%s", config.getString("host"), config.getString("port"), config.getString("name")));
+        dbConfig.setJdbcUrl(String.format("jdbc:mysql://%s:%s/%s", config.getString("host"), config.getString("port"), dbName));
         dbConfig.setUsername(config.getString("login"));
         dbConfig.setPassword(config.getString("password"));
         dbConfig.setMaximumPoolSize(config.getInt("max-connections"));
@@ -100,7 +103,7 @@ public class CurrencyDatabase {
         try (Connection conn = dbSource.getConnection(); PreparedStatement stmt = conn.prepareStatement(query)) {
             stmt.execute();
         } catch (SQLException e) {
-            Logger.logError(String.format("Couldn't create table '%s' in database '%s'", table, dbSource.getDataSourceProperties().getProperty("dataSource.serverName")));
+            Logger.logError(String.format("Couldn't create table '%s' in database '%s'", table, dbName));
             e.printStackTrace();
             return false;
         }
